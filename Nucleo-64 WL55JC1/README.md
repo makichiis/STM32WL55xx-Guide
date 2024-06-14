@@ -137,7 +137,6 @@ Copy the following source into `main.c`:
 ```c
 #include <stm32wl55xx.h>
 
-// Entry point function
 int main() {
     // Activate GPIO Port B RCC clock to enable Port B I/O.
     RCC->AHB2ENR = RCC_AHB2ENR_GPIOBEN;
@@ -191,3 +190,4 @@ If compilation is successful (and configuration is correct), a blue LED should b
 # Contributing
 
 I put this guide together in an afternoon. Please feel free to leave suggestions and report any problems in the issues thread!
+
