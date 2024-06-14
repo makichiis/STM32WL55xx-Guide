@@ -29,25 +29,25 @@ When installing Keil uVision, feel free to skip the package intallation steps. W
 ### STM32CubeProgrammer
 Once STM32CubeProgrammer is installed, you should be able to open it and see this window:
 
-![STM32CubeProgrammer Landing Page](screenshot-2.png)
+![STM32CubeProgrammer Landing Page](images/screenshot-2.png)
 
 After you reach this window:
 1. Connect the Nucleo-WL55JC1 (or IC1) to your computer via USB.
 2. On the STL-LINK configuration page, click the refresh icon next to the `Serial number` entry. A serial number should appear: 
 
-![Serial number preview](screenshot-3.png)
+![Serial number preview](images/screenshot-3.png)
 
 3. Set `Port` to `SWD`, `Frequency (kHz)` to `12000`, and `Mode` to `Under reset`. Your configuration should match the one shown here:
 
-![ST-Link configurations written above.](screenshot-4.png)
+![ST-Link configurations written above.](images/screenshot-4.png)
 
 4. Open STLinkUpgrade by clicking on `Firmware upgrade` below the configuration form. The following window should appear:
 
-![STLinkUpgrade 3.13.4 program window](screenshot-5.png)
+![STLinkUpgrade 3.13.4 program window](images/screenshot-5.png)
 
 5. Click `Open in update mode`, and set `MCO Output` to `Off`:
 
-![Alt text](screenshot-6.png)
+![Alt text](images/screenshot-6.png)
 
 6. Click `Upgrade` and wait for the firmware to update. After the firmware has been successfully updated, the device should re-connect.
 
@@ -56,15 +56,15 @@ After you reach this window:
 ### Keil uVision Configurations
 After STM32CubeProgrammer updates are made, open Keil uVision. You should see an empty editor interface:
 
-![Screenshot of default uVision UI](screenshot-1.png)
+![Screenshot of default uVision UI](images/screenshot-1.png)
 
 Before we build and flash any software, packages for ARM program compilation for the STM32 must be installed. Click the `Pack Installer` widget on the bottom toolbar:
 
-![Cursor hovering over the Pack Installer widget](screenshot-7.png)
+![Cursor hovering over the Pack Installer widget](images/screenshot-7.png)
 
 Once `Pack Installer` is open, give it a moment to load the packages list. When it is installed, you should see something like this:
 
-![Preview of the Pack Installer window](screenshot-8.png)
+![Preview of the Pack Installer window](images/screenshot-8.png)
 
 Once you can see this window, install the following dependencies:
 
@@ -84,23 +84,23 @@ Once the listed dependencies are installed, close the Pack Installer.
 
 Open a new project via `Project > New µVision Project...`
 
-![Alt text](screenshot-9.png)
+![Alt text](images/screenshot-9.png)
 
 Choose where you want your project to be created. To avoid any file conflict issues, create an empty folder and put your project in there. I typically put my projects under `C:/Users/me/repos/...`:
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 After clicking `Save`, this window should appear:
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 From there, you can choose which platform you want to build for. If your chip uses the CM4 chipset, selecy `STMicroelectronics > STM32WL Series > STM32WL55 > STM32WL55JCIx > STM32WL55JCx:CM4`:
 
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)
 
 If you set the chipset configurations correctly, the `Manage Run-Time Environment` window should appear:
 
-![Alt text](image-3.png)
+![Alt text](images/image-3.png)
 
 This is a list of all the software packs currently installed. To run our example program (and most programs), you will need to enable the following:
 
@@ -110,16 +110,16 @@ This is a list of all the software packs currently installed. To run our example
 
 The first two packages are necessary to compile our code into ARM platform code for the STM32 chips. The `Startup` package contains device information for the STM32WL55xx chip, and is necessary for compilation. Your dependency list should look something like this:
 
-![Alt text](image-4.png)
+![Alt text](images/image-4.png)
 
 Once the necessary dependencies are enabled, click `OK` to proceed to the editor. To verify that the chip setup and IDE configuration is correct, we will build a sample program that lights LED1 on the development board.
 
 ## Programming
 Create a new file under `Source Group 1` named `main.c`:
 
-![Alt text](image-5.png)
+![Alt text](images/image-5.png)
 
-![Alt text](image-6.png)
+![Alt text](images/image-6.png)
 
 Copy the following source into `main.c`:
 
@@ -144,38 +144,38 @@ int main() {
 
 Before this program can be compiled and flashed, configurations to the compiler need to be set. Click `Options for Target...` on the bottom toolbar to open the build settings menu:
 
-![Alt text](image-7.png)
+![Alt text](images/image-7.png)
 
 Under `Debug`, select the `ST-Link Debugger`:
 
-![Alt text](image-8.png)
+![Alt text](images/image-8.png)
 
 Click the `Settings` widget next to the debugger entry:
 
-![Alt text](image-9.png)
+![Alt text](images/image-9.png)
 
 and set all configurations of clock speed to the default STM32 clock speed (32 MHz):
 
-![Alt text](image-10.png)
-![Alt text](image-11.png)
+![Alt text](images/image-10.png)
+![Alt text](images/image-11.png)
 
 Then under `Flash Download`, select `Reset and Run` to enable execution of the program flash upon flash download:
 
-![Alt text](image-12.png)
+![Alt text](images/image-12.png)
 
 Click `OK` until all configuration menus are closed.
 
 Build the program:
 
-![Alt text](image-13.png)
+![Alt text](images/image-13.png)
 
 Then download the program into the `STM32WL55xx` chip:
 
-![Alt text](image-14.png)
+![Alt text](images/image-14.png)
 
 If compilation is successful (and configuration is correct), a blue LED should be enabled on the board:
 
-![Alt text](image-15.png)
+![Alt text](images/image-15.png)
 
 # Contributing
 
