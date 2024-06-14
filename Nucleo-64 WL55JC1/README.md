@@ -142,7 +142,7 @@ int main() {
     // Activate GPIO Port B RCC clock to enable Port B I/O.
     RCC->AHB2ENR = RCC_AHB2ENR_GPIOBEN;
 
-    // Set all GPIO pin B15 to output mode (0b01)
+    // Set GPIO pin B15 to output mode (0b01)
     GPIOB->MODER = (GPIOB->MODER & ~GPIO_MODER_MODE15) | GPIO_MODER_MODE15_0;
 
     // Repeating loop to avoid program reset.
