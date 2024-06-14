@@ -77,6 +77,15 @@ Once you can see this window, install the following dependencies:
 * ARM::CMSIS-View
 * Keil::ARM_Compiler
 * Keil::MDK-Middleware
+* Keil::STM32WLxx_DFP
+
+Most of these packages are shown on the page by default under the `Generic` package list. To find and install `STM32WLxx_DFP`, enter "STM" into the search bar to the far left, and select `STM32WL Series > STM32WL55 > STM32WL55JCIx`:
+
+![Alt text](images/image-16.png)
+
+Then a `Device Specific` entry titled `Keil::STM32WLxx_DFP` should appear. Install it.
+
+![Alt text](images/image-17.png)
 
 > To experienced readers: While NN, RTX, and DSP aren't necessary for most applications, STM32 projects seem to have linker errors without them installed. I haven't yet looked into why, or how to prevent it without installing these dependencies. If I do figure it out, I'll update this entry. Otherwise, feel free to leave an issue on how to solve the problem. Contributions are welcome!
 
@@ -111,6 +120,8 @@ This is a list of all the software packs currently installed. To run our example
 The first two packages are necessary to compile our code into ARM platform code for the STM32 chips. The `Startup` package contains device information for the STM32WL55xx chip, and is necessary for compilation. Your dependency list should look something like this:
 
 ![Alt text](images/image-4.png)
+
+> Note: Dependencies highlighted in yellow are dependent upon other dependencies. In this case, `Device/Startup` relies on the CMSIS compiler suite.
 
 Once the necessary dependencies are enabled, click `OK` to proceed to the editor. To verify that the chip setup and IDE configuration is correct, we will build a sample program that lights LED1 on the development board.
 
