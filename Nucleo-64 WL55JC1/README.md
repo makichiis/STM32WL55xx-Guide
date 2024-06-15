@@ -103,7 +103,7 @@ After clicking `Save`, this window should appear:
 
 ![Alt text](images/image-1.png)
 
-From there, you can choose which platform you want to build for. If your chip uses the CM4 chipset, selecy `STMicroelectronics > STM32WL Series > STM32WL55 > STM32WL55JCIx > STM32WL55JCx:CM4`:
+From there, you can choose which platform you want to build for. If your chip uses the CM4 chipset, select `STMicroelectronics > STM32WL Series > STM32WL55 > STM32WL55JCIx > STM32WL55JCx:CM4`:
 
 ![Alt text](images/image-2.png)
 
@@ -136,7 +136,7 @@ Copy the following source into `main.c`:
 
 ```c
 #include <stm32wl55xx.h>
-
+P
 int main() {
     // Activate GPIO Port B RCC clock to enable Port B I/O.
     RCC->AHB2ENR = RCC_AHB2ENR_GPIOBEN;
