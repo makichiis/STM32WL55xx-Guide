@@ -136,7 +136,7 @@ Copy the following source into `main.c`:
 
 ```c
 #include <stm32wl55xx.h>
-P
+
 int main() {
     // Activate GPIO Port B RCC clock to enable Port B I/O.
     RCC->AHB2ENR = RCC_AHB2ENR_GPIOBEN;
